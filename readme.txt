@@ -15,7 +15,7 @@ $ Module Title:               Object-Oriented Programming                       
 $ Module Code:                BSC20921                                                                                           $
 $ Weighting:                  40%                                                                                                $
 $ Maximal Possible Mark:      100 marks                                                                                          $
-$ Submission Date:            23/11/21 (via private repository on GitHub)                                                        $
+$ Submission Date:            25/11/21 (via private repository on GitHub)                                                        $
 $                                                                                                                                $
 $ Student Name:               Mateus Fonseca Campos                                                                              $
 $ Student Number:             24088                                                                                              $
@@ -105,7 +105,7 @@ SUMMARY
 1) ASSIGNMENT BRIEF
 
   This assignment's task was to develop a .NET console application in C# with basic banking functionalities, such as:
-  
+
   - A login menu, where an user can login either as an employee or a customer.
     Employee should be authenticated through a special PIN of value "A1234".
     Customer should be authenticated through their first name, last name, account number and personal PIN.
@@ -126,13 +126,13 @@ SUMMARY
 2) HIERARCHY
 
   The relationship between the components in this project can be outlined as follows:
-  
+
   - Program implements IMenu.
   - Employee extends User and implements IMenu.
   - Customer extends User and implements IMenu.
   - Account is a property of Customer.
   - Transaction is a property of Account.
-  
+
   Note: the idea of having IMenu as an interface comes from predicting that, although all users in this project need menus, later
   introduced types of user may not need one. That is, if in a later version of this application, a different specialized type of
   user is implemented, e.g. an ITAdmin, it would not necessarily need a menu, therefore it is better to have menu-related methods
@@ -149,12 +149,12 @@ boots up basic variables and objects that are passed on as arguments to other cl
   Constructors:
   - public Program(int,string,string,string[],
     string[],char,char,char)                          initializes the properties enforced by IMenu.
-  
+
   Methods:
-  - public void Banner(string,string,string[])        prints an enclosed banner used both for greeting and farewell. It has three 
-                                                      sections: head sentence, description and footer. Head sentence and footer 
+  - public void Banner(string,string,string[])        prints an enclosed banner used both for greeting and farewell. It has three
+                                                      sections: head sentence, description and footer. Head sentence and footer
                                                       are static in size and the code only centralizes them. The middle section,
-                                                      description, may be have multiple lines of text. Therefore, the code 
+                                                      description, may be have multiple lines of text. Therefore, the code
                                                       provides dynamic linebreakers to prevent overflow.
   - public static void Main(string[])                 is the entry point of the whole application.
 
@@ -168,13 +168,13 @@ are common to any derived class that may inherit from it (e.g., Employee, Custom
 
   Properties:
   - public string Pin                                 stores the PIN code of a user.
-  
+
   Methods:
   - abstract public bool logIn(TestDriver)            returns true or false depending on whether the user was able to log in.
   - abstract public bool start(List<Customer>,
     TestDriver)                                       returns true or false depending on whether the application should go back to
                                                       the start.
-  - public bool pinAuthentication(User,TestDriver)    verifies that a given PIN code is authentic by checking it against what is 
+  - public bool pinAuthentication(User,TestDriver)    verifies that a given PIN code is authentic by checking it against what is
                                                       stored for the user in the database.
   - public Customer customerIdentification(
     List<Customer>,TestDriver)                        scans the database in search for a user whose credentials (i.e., first name,
@@ -190,16 +190,16 @@ are common to any derived class that may inherit from it (e.g., Employee, Custom
                                                       in case of failure.
   - public List<Customer> withdraw(List<Customer>,
     Customer,TestDriver)                              decreases the value of the Balance property for either the savings or
-                                                      current account of a given customer. It returns an updated version of the 
+                                                      current account of a given customer. It returns an updated version of the
                                                       customers list if the operation was successful or an unaltered version of
                                                       it in case of failure.
   - public List<Customer> importCustomers(
-    TestDriver)                                       loads all customers' data from the database and stores them in a list which 
+    TestDriver)                                       loads all customers' data from the database and stores them in a list which
                                                       is returned. If the database file cannot be found, the method creates one
                                                       and returns an empty list.
   - public List<Customer> saveCustomers(
     List<Customer>,TestDriver)                        writes the current state of the customers list to the database file. If the
-                                                      file cannot be found, the method creates one. It returns the list of 
+                                                      file cannot be found, the method creates one. It returns the list of
                                                       customers.
   - public void saveTransactions(List<Transaction>,
     string,string,TestDriver)                         writes the last transaction performed in the system to the database
@@ -213,27 +213,27 @@ of its own. It also implements the IMenu interface, which allows an Employee ins
 
   Constructors:
   - public Employee(string,int,string,string,
-    string[],string[],char,char,char)                 initializes the Pin property (inherited from User) and all the properties 
+    string[],string[],char,char,char)                 initializes the Pin property (inherited from User) and all the properties
                                                       enforced by IMenu.
-                                                      
+
   Methods:
   - public List<Customer> createCustomer(
-    List<Customer>,TestDriver)                        triggers the instantiation of a new object of type Customer. It calls the 
-                                                      User's customerIdentification method to validate naming format and verify 
-                                                      that those credentials do not belong to a customer already present in the 
-                                                      system. It also validates email format by testing the Address property of 
-                                                      the MailAddress class, which is set to true if the address is valid and 
+    List<Customer>,TestDriver)                        triggers the instantiation of a new object of type Customer. It calls the
+                                                      User's customerIdentification method to validate naming format and verify
+                                                      that those credentials do not belong to a customer already present in the
+                                                      system. It also validates email format by testing the Address property of
+                                                      the MailAddress class, which is set to true if the address is valid and
                                                       false if not.
   - public List<Customer> deleteCustomer(
     List<Customer>,TestDriver)                        removes an identified instance of the Customer class from the database. It
                                                       calls the User's customerIdentification method to verify that the informed
                                                       credentials in fact belong to a customer currently present in the system. It
-                                                      also checks that both balances of the customer's account are zeroed, 
+                                                      also checks that both balances of the customer's account are zeroed,
                                                       otherwise the account cannot be deleted.
   - public void listCustomers(List<Customer>,
-    TestDriver)                                       prints a formatted list with all the customers currently present in the 
+    TestDriver)                                       prints a formatted list with all the customers currently present in the
                                                       system.
-  
+
   Note: inherited/enforced members are omitted.
 
 2.1.4) Customer
@@ -249,7 +249,7 @@ methods of its own. It also implements the IMenu interface, which allows an Cust
   - public string Email                               stores the email address of a customer.
   - public Account Savings                            stores savings account details of a customer account.
   - public Account Current                            stores current account details of a cusomter account.
-  
+
   Constructors:
   - public Customer()                                 invoked when creating a generic instance of Customer that works as a
                                                       placeholder that will eventually be assigned the content of a real
@@ -260,11 +260,11 @@ methods of its own. It also implements the IMenu interface, which allows an Cust
                                                       be retrieved from the database.
   - public Customer(string,string,string,string,
     string,decimal,decimal,TestDriver)                invoked when an existing customer account is loaded from the database.
-    
+
   Methods:
   - public void transactionHistory(TestDriver)        prints a formatted list with all the transactions for a specified account
                                                       type.
-                                                      
+
   Note: inherited/enforced members are omitted.
 
 2.1.5) Account
@@ -275,7 +275,7 @@ methods of its own. It also implements the IMenu interface, which allows an Cust
   Properties:
   - public decimal Balance                            stores the current balance of the account.
   - public List<Transaction> Transactions             defines a list that keeps record of all transactions for the account.
-  
+
   Constructors:
   - public Account(string)                            invoked when a brand new customer account is created and there is no data
                                                       to be retrieved from the database.
@@ -291,7 +291,7 @@ a deposit, a withdrawal), an object of this class is instantiated to represent t
   - public string Type                                stores the type of the transaction (either deposit or withdrawal).
   - public decimal Amount                             stores the amount of money of the transaction.
   - public decimal Balance                            stores the final balance of the account after the transaction happens.
-  
+
   Constructors:
   - public Transaction(DateTime,string,decimal,
     decimal)                                          initializes all four properties of the class.
@@ -313,11 +313,11 @@ occasion of a badly designed input script, that is, when the file does not indic
                                                       prevents the program from being trapped inside of infinite loops.
   - public StreamReader Input                         defines the reading source when in test mode.
   - public StreamWriter Output                        defines the writing destination when in test mode.
-  
+
   Constructors:
   - public TestDriver(string)                         invoked when the program is set not to run in test mode.
   - public TestDriver(string,string,string)           invoked when the program is set to run in test mode.
-  
+
   Methods:
   - private string validateInput(string,string)       validates the input file when running in test mode by making sure that the
                                                       file contains the EndOfFile code. If the file does not exist, the method
@@ -368,14 +368,14 @@ files and folders created by .NET core by default, in which case, please refer t
 
 3.2) classes
 
-  This directory houses all class files of the project with the exception of Program.cs, which is at the root (refer to 3.1). 
+  This directory houses all class files of the project with the exception of Program.cs, which is at the root (refer to 3.1).
 
   - User.cs: file with the C# code for the User class (refer to 2.1.2).
   - Employee.cs: file with the C# code for the Employee class (refer to 2.1.3).
-  - Customer.cs: file with the C# code for the Customer class (refer to 2.1.4).  
+  - Customer.cs: file with the C# code for the Customer class (refer to 2.1.4).
   - Account.cs: file with the C# code for the Account class (refer to 2.1.5).
   - Transaction.cs: file with the C# code for the Transaction class (refer to 2.1.6).
-  - TestDriver.cs: file with the C# code for the TestDriver class (refer to 2.1.7).  
+  - TestDriver.cs: file with the C# code for the TestDriver class (refer to 2.1.7).
 
 3.3) database
 
@@ -395,7 +395,7 @@ it gets populated as accounts and transactions are created.
 3.4) interfaces
 
   This directory houses the one interface file of the project.
-  
+
   - IMenu.cs: file with the C# code for the IMenu interface (refer to 2.2.1).
 
 3.5) test
@@ -405,7 +405,7 @@ it gets populated as accounts and transactions are created.
 3.5.1) deploy/1/input-and-output
 
   This directory houses the input/output files necessary/generated to/by the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
   - customers.txt: this file represents the state of the database after the test (refer to 3.3).
@@ -433,7 +433,7 @@ it gets populated as accounts and transactions are created.
 3.5.2) deploy/2/input-and-output
 
   This directory houses the input/output files necessary/generated to/by the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
   - customers.txt: this file represents the state of the database after the test (refer to 3.3).
@@ -461,7 +461,7 @@ it gets populated as accounts and transactions are created.
 3.5.3) create/1/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -481,24 +481,24 @@ it gets populated as accounts and transactions are created.
 3.5.5) create/2/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-current.txt: this file represents the state of the database before the test (refer to 3.3).
   - SG-13-19-07-savings.txt: this file represents the state of the database before the test (refer to 3.3).
   - SG-13-19-07-current.txt: this file represents the state of the database before the test (refer to 3.3).
-  
+
 3.5.6) create/2/output
 
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.7) delete/1/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -516,7 +516,7 @@ it gets populated as accounts and transactions are created.
 3.5.9) delete/2/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -533,7 +533,7 @@ it gets populated as accounts and transactions are created.
 3.5.11) delete/3/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -550,7 +550,7 @@ it gets populated as accounts and transactions are created.
 3.5.13) deposit/1/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -565,11 +565,11 @@ it gets populated as accounts and transactions are created.
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
   - customers.txt: this file represents the state of the database after the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database after the test (refer to 3.3).
-  
+
 3.5.15) deposit/2/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -582,11 +582,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.17) deposit/3/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -601,11 +601,11 @@ it gets populated as accounts and transactions are created.
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
   - customers.txt: this file represents the state of the database after the test (refer to 3.3).
   - SG-13-19-07-current.txt: this file represents the state of the database after the test (refer to 3.3).
-  
+
 3.5.19) deposit/4/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -619,11 +619,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.21) history/1/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -638,11 +638,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.23) history/2/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -657,11 +657,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.25) list/1/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -676,11 +676,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.27) list/2/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
 
 3.5.28) list/2/output
@@ -688,11 +688,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.29) withdraw/1/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -711,7 +711,7 @@ it gets populated as accounts and transactions are created.
 3.5.31) withdraw/2/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -724,11 +724,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.33) withdraw/3/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -741,11 +741,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.35) withdraw/4/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -760,11 +760,11 @@ it gets populated as accounts and transactions are created.
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
   - customers.txt: this file represents the state of the database after the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database after the test (refer to 3.3).
-  
+
 3.5.37) withdraw/5/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -777,11 +777,11 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.39) withdraw/6/input
 
   This directory houses the input files necessary to the test mode and scenario in question.
-  
+
   - input.txt: input script file. Each line in the file is sequencially fed into the program as it runs in test mode.
   - customers.txt: this file represents the state of the database before the test (refer to 3.3).
   - AT-10-01-20-savings.txt: this file represents the state of the database before the test (refer to 3.3).
@@ -794,7 +794,7 @@ it gets populated as accounts and transactions are created.
   This directory houses the output files generated by the test mode and scenario in question.
 
   - output.txt: output log file. Each line in the file is sequencially fed by the program as it runs in test mode.
-  
+
 3.5.41) custom/1/input
 
   This directory may house the input files necessary to the test mode and scenario in question.
@@ -835,12 +835,12 @@ it gets populated as accounts and transactions are created.
 application. The CLI syntax for running the program in test mode is:
 
   - dotnet run test {FEATURE} {SCENARIO}
-  
+
   Alternatively, you can pass FEATURE and SCENARIO as the first and second arguments of the main method, respectively, through the
 GUI of your favorite IDE.
-  
+
   Where:
-  
+
     FEATURE   SCENARIO
 
     deploy             Automatically populates the database.

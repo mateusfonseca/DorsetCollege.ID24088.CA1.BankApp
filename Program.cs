@@ -9,7 +9,7 @@ Module Title:             Object-Oriented Programming
 Module Code:           	  BSC20921
 Weighting:			          40%
 Maximal Possible Mark:    100 marks
-Submission Date:			    23/11/21 (via private repository on GitHub)
+Submission Date:			    25/11/21 (via private repository on GitHub)
 
 Student Name:             Mateus Fonseca Campos
 Student Number:		        24088
@@ -91,7 +91,7 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
     // Program's local method that prints an enclosed banner used both for greeting and farewell.
     // It has three sections: head sentence, description and footer.
     // Head sentence and footer are static in size and the code only centralizes them.
-    // The middle section, description, may be have multiple lines of text. Therefore, the code
+    // The middle section, description, may have multiple lines of text. Therefore, the code
     // provides dynamic linebreakers to prevent overflow.
     public void Banner(string headSentence, string description, string[] footer) {
       List<string> subDescription = new();
@@ -167,9 +167,7 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
             Console.WriteLine("Please, ensure that you have backed up any sensitive information before proceeding.");
             Console.WriteLine("\nAre you certain that you want to continue?");
             Console.Write("Enter \"yes\" or \"no\" (default is \"no\"): ");
-            if (Console.ReadLine() == "yes") {
-              // do nothing.
-            } else {
+            if (Console.ReadLine() != "yes") {
               Console.WriteLine("\nAutomated deployment canceled!");
               return;
             }
