@@ -306,8 +306,6 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
       // Prints menu.
       primaryObject.menuHeader();
       primaryObject.menuBody(0,0);
-
-      //
       do {
         userType = Console.ReadLine();
         if (testDriver.IsTest) { if (userType == testDriver.EndOfFile) Environment.Exit(1); }
