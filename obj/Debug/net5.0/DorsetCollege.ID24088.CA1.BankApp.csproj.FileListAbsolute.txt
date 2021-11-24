@@ -14,3 +14,19 @@
 /home/mateuscampos/Desktop/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/ref/DorsetCollege.ID24088.CA1.BankApp.dll
 /home/mateuscampos/Desktop/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.pdb
 /home/mateuscampos/Desktop/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.genruntimeconfig.cache
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/bin/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/bin/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.deps.json
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/bin/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.runtimeconfig.json
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/bin/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.runtimeconfig.dev.json
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/bin/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.dll
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/bin/Debug/net5.0/ref/DorsetCollege.ID24088.CA1.BankApp.dll
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/bin/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.pdb
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.csproj.AssemblyReference.cache
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.AssemblyInfoInputs.cache
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.AssemblyInfo.cs
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.csproj.CoreCompileInputs.cache
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.dll
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/ref/DorsetCollege.ID24088.CA1.BankApp.dll
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.pdb
+/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/Debug/net5.0/DorsetCollege.ID24088.CA1.BankApp.genruntimeconfig.cache

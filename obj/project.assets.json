@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mateuscampos/Desktop/DorsetCollege.ID24088.CA1.BankApp/DorsetCollege.ID24088.CA1.BankApp.csproj",
+      "projectUniqueName": "/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/DorsetCollege.ID24088.CA1.BankApp.csproj",
       "projectName": "DorsetCollege.ID24088.CA1.BankApp",
-      "projectPath": "/home/mateuscampos/Desktop/DorsetCollege.ID24088.CA1.BankApp/DorsetCollege.ID24088.CA1.BankApp.csproj",
+      "projectPath": "/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/DorsetCollege.ID24088.CA1.BankApp.csproj",
       "packagesPath": "/home/mateuscampos/.nuget/packages/",
-      "outputPath": "/home/mateuscampos/Desktop/DorsetCollege.ID24088.CA1.BankApp/obj/",
+      "outputPath": "/home/mateuscampos/Documents/Dorset College/Year 2/Semester 1/Object-Oriented Programming/CA1/DorsetCollege.ID24088.CA1.BankApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mateuscampos/.nuget/NuGet/NuGet.Config"

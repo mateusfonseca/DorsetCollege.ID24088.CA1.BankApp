@@ -104,9 +104,17 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
       if (description.Length > maxLength) {
         for (int i=0; i<description.Length; i = i + maxLength) {
           try {
-            subDescription.Add(description.Substring(i, maxLength));
-          } catch (ArgumentOutOfRangeException) {
-            subDescription.Add(description.Substring(i));
+            if (description[i + maxLength] == ' ') {
+              subDescription.Add(description.Substring(i, maxLength));
+            } else {
+              int lastWord = description.Substring(i, maxLength).LastIndexOf(" ");
+              subDescription.Add(description.Substring(i, lastWord));
+              i -= maxLength - lastWord;
+            }
+          } catch (Exception e) {
+            if (e is ArgumentOutOfRangeException || e is IndexOutOfRangeException) {
+              subDescription.Add(description.Substring(i));
+            }
           }
         }
         foreach (string line in subDescription) {
@@ -288,7 +296,7 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
       string userType; // type of user to log in (either Employee or Customer).
       // The three variables below compose the banner.
       string headSentence = "Dorset College Bank Application!";
-      string description = "This .NET console application, written in C#, was developed for my OOP CA1... description follows!";
+      string description = "This .NET console application, written in C#, was developed as part of the Object-Oriented Programming module's Continuous Assessment number 1 of the BSc of Science in Computing & Multimedia course at Dorset College and aims to implement some basic banking functionalities.";
       string[] footer = {"By Mateus F Campos", "Dorset College Student ID #24088", "Dublin, November of 2021"};
 
       // Prints greeting banner.
