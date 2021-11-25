@@ -177,7 +177,7 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
           testDriver = new($"./test/{args[1]}/{args[2]}/input-and-output/", $"./test/{args[1]}/{args[2]}/input-and-output/", "!EOF!");
           foreach (string file in Directory.GetFiles(testDriver.FilePathIn)) {
             string fileName = file.Substring(file.LastIndexOf("/")+1);
-            if (fileName != "output.txt" && fileName != "input.txt") {
+            if (fileName != "output.txt" && fileName != "input.txt" && fileName != ".gitkeep") {
               File.Delete(file);
             }
           }
@@ -352,7 +352,7 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
         if (args[1] == "deploy" && args[2] == "2") {
           foreach (string file in Directory.GetFiles(testDriver.FilePathOut)) {
             string fileName = file.Substring(file.LastIndexOf("/")+1);
-            if (fileName != "output.txt" && fileName != "input.txt") {
+            if (fileName != "output.txt" && fileName != "input.txt" && fileName != ".gitkeep") {
               File.Copy(file, $"./database/{fileName}", true);
             }
           }
