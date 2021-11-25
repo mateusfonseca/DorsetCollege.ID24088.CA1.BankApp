@@ -77,6 +77,8 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
       Console.WriteLine($"{this.Corner}{border}{this.Corner}");
       Console.WriteLine($"{this.Col}{getLeftPadding(" ",this.Title,this.Width)}{this.Title}{getRightPadding(" ",this.Title,this.Width,getLeftPadding(" ",this.Title,this.Width))}{this.Col}");
       Console.WriteLine($"{this.Corner}{border}{this.Corner}");
+      Console.WriteLine($"{this.Col}{getLeftPadding(" ",this.SubTitle,this.Width)}{this.SubTitle}{getRightPadding(" ",this.SubTitle,this.Width,getLeftPadding(" ",this.SubTitle,this.Width))}{this.Col}");
+      Console.WriteLine($"{this.Corner}{border}{this.Corner}");
     }
 
     // Program's method enforced by IMenu (refer to IMenu's code to understand its purpose).
@@ -230,11 +232,20 @@ namespace DorsetCollege.ID24088.CA1.BankApp // namespace defined by this project
       }
       // TEST MODE SECTION ENDS HERE
 
+      // Sets the width of the menu frames to 90% of the console window size with
+      // a maximum size of 128 and a minimum size of 64.
+      int winSize = Convert.ToInt32(Console.WindowWidth*0.9);
+      if (winSize > 128) {
+        winSize = 128;
+      } else if (winSize < 64) {
+        winSize = 64;
+      }
+
       // Instantiates an object of type Program and initializes all its properties.
       Program primaryObject = new Program (
-        128,
+        winSize,
         "DORSET COLLEGE BANK APPLICATION",
-        "PLACEHOLDER",
+        $"{DateTime.Now:D}".ToUpper(),
         new string[] {
           "Log In As"
         },
